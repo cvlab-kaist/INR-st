@@ -8,7 +8,7 @@ Overall code will be updated in this week...
 
 # Overall Architecture
 
-Our model NeMF is illustrated below:
+Our model "Controllable Style Transfer via Test-time Training of Implicit Neural Representation" is illustrated below:
 
 
 ![alt text](/images/structure.png)
