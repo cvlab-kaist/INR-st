@@ -119,43 +119,33 @@
 <html>
 <head>
 	<title>LANIT</title>
-	<meta property="og:image" content="https://KU-CVLAB.github.io/LANIT/resources/teaser_lanit.png"/>
-	<meta property="og:title" content="LANIT: Language-Driven Image-to-Image Translation for Unlabeled Data" />
+	<meta property="og:image" content="https://KU-CVLAB.github.io/INR-st/resources/INR-st_teaser.png"/>
+	<meta property="og:title" content="Controllable Style Transfer via Test-time Training of Implicit Neural Representation" />
 </head>
 
 <body>
 	<br>
 	<center>
-		<span style="font-size:36px">LANIT: Language-Driven Image-to-Image Translation for Unlabeled Data</span>
+		<span style="font-size:36px">Controllable Style Transfer via Test-time Training of Implicit Neural Representation</span>
 		<table align=center width=1100px>
 			<table align=center width=1100px>
 				<tr>
 					<td align=center width=180px>
 						<center>
-							<span style="font-size:24px"><a href="https://scholar.google.co.kr/citations?hl=ko&user=Fg0DBKwAAAAJ">Jihye Park<sup>*1</sup></a></span>
+							<span style="font-size:24px"><a href="https://github.com/sunwoo76">Sunwoo Kim</a></span>
 						</center>
 					</td>
 					<td align=center width=220px>
 						<center>
-							<span style="font-size:24px"><a href="https://scholar.google.co.kr/citations?user=oDplwx8AAAAJ&hl=ko&oi=sra">Soohyun Kim<sup>*1</sup></a></span>
+							<span style="font-size:24px"><a href="https://cvlab.korea.ac.kr/members">Youngjo Min</a></span>
 						</center>
 					</td>
 					<td align=center width=200px>
 						<center>
-							<span style="font-size:24px"><a href="https://github.com/sunwoo76">Sunwoo Kim<sup>*1</sup></a></span>
+							<span style="font-size:24px"><a href="https://cvlab.korea.ac.kr/members">Younghun Jung</a></span>
 						</center>
 					</td>
 					<td align=center width=180px>
-						<center>
-							<span style="font-size:24px"><a href="https://scholar.google.co.kr/citations?user=7NBlQw4AAAAJ&hl=ko&oi=ao">Jaejun Yoo<sup>2</sup></a></span>
-						</center>
-					</td>
-					<td align=center width=200px>
-						<center>
-							<span style="font-size:24px"><a href="https://scholar.google.co.kr/citations?user=BWBGrEEAAAAJ&hl=ko&oi=ao">Youngjung Uh<sup>3</sup></a></span>
-						</center>
-					</td>
-					<td align=center width=250px>
 						<center>
 							<span style="font-size:24px"><a href="https://cvlab.korea.ac.kr/members">Seungryong Kim<sup>1</sup></a></span>
 						</center>
@@ -170,20 +160,6 @@
 							<span style="font-size:24px">Korea University<sup>1</sup></a></span>
 						</center>
 					</td>
-			
-					<td align=center width=150px>
-						<center>
-							<span style="font-size:24px">UNIST<sup>2</sup></a></span>
-						</center>
-					</td>
-	
-					<td align=center width=150px>
-						<center>
-							<span style="font-size:24px">Yonsei University<sup>3</sup></a></span>
-						</center>
-					</td>
-
-
 				</tr>
 			</table>
 						
@@ -191,12 +167,12 @@
 				<tr>
 					<td align=center width=120px>
 						<center>
-							<span style="font-size:24px"><a href='https://arxiv.org/abs/2208.14889'>[Paper]</a></span>
+							<span style="font-size:24px"><a href='https://arxiv.org/'>[Paper]</a></span>
 						</center>
 					</td>
 					<td align=center width=120px>
 						<center>
-							<span style="font-size:24px"><a href='https://github.com/KU-CVLAB/LANIT'>[GitHub]</a></span><br>
+							<span style="font-size:24px"><a href='https://github.com/KU-CVLAB/INR-st'>[GitHub]</a></span><br>
 						</center>
 					</td>
 				</tr>
@@ -210,7 +186,7 @@
 			<tr>
 				<td width=420px>
 					<center>
-						<img class="round" style="width:800px" src="./resources/teaser_lanit.png"/>
+						<img class="round" style="width:800px" src="./resources/INR-st_teaser.png"/>
 					</center>
 				</td>
 			</tr>
@@ -218,7 +194,6 @@
 		<table align=center width=850px>
 			<tr>
 				<td>
-					LANIT firstly highlights to address multiple attributes in one sample for Image-to-Image translation tasks.
 				</td>
 			</tr>
 		</table>
@@ -230,28 +205,24 @@
 		<center><h1>Abstract</h1></center>
 		<tr>
 			<td>
-				Existing techniques for image-to-image translation commonly have suffered from two critical problems: heavy reliance on per-sample domain annotation and/or inability of handling multiple attributes per image. Recent methods adopt clustering approaches to easily provide per-sample annotations in an unsupervised manner.
-				However, they cannot account for the real-world setting; one sample may have multiple attributes.
-				In addition, the semantics of the clusters are not easily coupled to human understanding.
-				To overcome these, we present a LANguage-driven Image-to-image Translation model, dubbed LANIT.
-				We leverage easy-to-obtain candidate domain annotations given in texts for a dataset and jointly optimize them during training.
-				The target style is specified by aggregating multi-domain style vectors according to the multi-hot domain assignments.
-				As the initial candidate domain texts might be inaccurate, we set the candidate domain texts to be learnable and jointly fine-tune them during training.
-				Furthermore, we introduce a slack domain to cover samples that are not covered by the candidate domains.
-				Experiments on several standard benchmarks demonstrate that LANIT achieves comparable or superior performance to existing models
+				We propose a controllable style transfer framework based on Implicit Neural Representation (INR) that pixel-wisely controls the stylized output via test-time training.
+				Unlike traditional image optimization methods that often suffer from unstable convergence and learning-based methods that require intensive training and have limited generalization ability,
+				we present a model optimization frame- work that optimizes the neural networks during test-time with explicit loss functions for style transfer.
+				After being test-time trained once, thanks to the flexibility of the INR-based model, our framework can precisely control the stylized images in a pixel-wise manner and freely adjust image resolution without further optimization or training.
+				We demonstrate several applications in Section 6.
 			</td>
 		</tr>
 	</table>
 	<br>
 	<hr>
 
-	<center><h1> Levels of Supervision </h1></center>
+	<center><h1> Intuition </h1></center>
 	
 	<table align=center width=500px>
 		<tr>
 			<td align=center width=600px>
 				<center>
-					<td><img class="round" style="width:800px" src="./resources/level_sup.png"/></td>
+					<td><img class="round" style="width:800px" src="./resources/intuition.png"/></td>
 				</center>
 			</td>
 		</tr>
@@ -260,9 +231,35 @@
 		<center>
 			<tr>
 				<td>
-					For unpaired image-to-image translation, (a) conventional methods (CycleGAN, MUNIT, FUNIT, StarGAN, SEMIT) require at least per-sample-level domain supervision, which is often hard to collect.
-					To overcome this, (b) unsupervised learning methods (TUNIT, Style aware discriminator) learn image translation model using a dataset itself without any supervision, but it shows limited performance and lacks the semantic understanding of each cluster, limiting its applicability.
-					Unlike them, (c) we present a novel framework for image translation that requires a dataset with possible textual domain descriptions (i.e., dataset-level annotation), which achieves comparable or even better performance than previous methods.
+					F(a) image optimization-based methods that optimize an output image itself at test-time with explicit content and style losses,
+					which often generate artifacts and produce limited performance due to the lack of image prior,
+					(b) learning-based methods that require intensive offline training on large-scale training data and use pre-trained,fixed networks at test time,
+					and (c) our model that learns the image prior with coordinate-based neural networks at test-time and makes controllable and continuous representation.
+				</td>
+			</tr>
+		</center>
+	</table>
+	<br>
+	<hr>
+
+	<center><h1> Pixel-wise controllability </h1></center>
+	
+	<table align=center width=500px>
+		<tr>
+			<td align=center width=600px>
+				<center>
+					<td><img class="round" style="width:800px" src="./resources/pixelwise.png"/></td>
+				</center>
+			</td>
+		</tr>
+	</table>
+	<table align=center width=850px>
+		<center>
+			<tr>
+				<td>
+					Each area within an image is stylized with a different degree of α (from the left, 0.25, 1.0, 0.0, 0.5).
+					Our approach can precisely transfer the desired degree of style to the target area.
+					However, other CNN-based methods show unclear separation at the boundary where a degree of style changes as their generator performs kernel-wise operations on given image features.
 				</td>
 			</tr>
 		</center>
@@ -276,7 +273,7 @@
 		<tr>
 			<td align=center width=600px>
 				<center>
-					<td><img class="round" style="width:800px" src="./resources/network_config_lanit.png"/></td>
+					<td><img class="round" style="width:800px" src="./resources/structure.png"/></td>
 				</center>
 			</td>
 		</tr>
@@ -285,7 +282,7 @@
 		<center>
 			<tr>
 				<td>
-					We propose a language-driven Image-to-Image translation framework with candidate "dataset-level" domain annotations, which is more practical than fully-unsupervised methods in the real-world.
+					We propose a INR-based style transfer framework with test-time optimization.
 				</td>
 			</tr>
 		</center>
@@ -295,94 +292,58 @@
 	
 	<center><h1> Qualitative Results </h1></center>
 	
-	<h2> Controlling the number of attributes to translate </h2>
+	<h2> Qualitative Comparison </h2>
 	<table align=center width=600px>
 		<tr>
 			<td align=center width=600px>
 				<center>
-					<td><img class="round" style="width:820px" src="./resources/celeb_control.png"/></td>
+					<td><img class="round" style="width:820px" src="./resources/qual.png"/></td>
 				</center>
 			</td>
 		</tr>
 	</table>
 	
-	<h2> Latent-guided translation </h2>
-	<h3> AnimalFaces-10 </h3>
+	<h2> Applications </h2>
+	<h3> Super Resolution </h3>
 	<table align=center width=600px>
 		<tr>
 			<td align=center width=600px>
 				<center>
-					<td><img class="round" style="width:800px" src="./resources/animal_lat.png"/></td>
+					<td><img class="round" style="width:800px" src="./resources/res.png"/></td>
 				</center>
 			</td>
 		</tr>
 	</table>
 	
-	<h3> Food-10 </h3>
+	<h3> Region-wise style transfer </h3>
 	<table align=center width=600px>
 		<tr>
 			<td align=center width=600px>
 				<center>
-					<td><img class="round" style="width:800px" src="./resources/food_lat.png"/></td>
+					<td><img class="round" style="width:800px" src="./resources/mask.png"/></td>
 				</center>
 			</td>
 		</tr>
 	</table>
-	
-	<h2> Reference-guided translation </h2>
-	<h3> LSUN-Church </h3>
+
+	<h3> Gradation </h3>
 	<table align=center width=600px>
 		<tr>
 			<td align=center width=600px>
 				<center>
-					<td><img class="round" style="width:800px" src="./resources/lsunchurch.png"/></td>
+					<td><img class="round" style="width:800px" src="./resources/gradation.png"/></td>
 				</center>
 			</td>
 		</tr>
 	</table>
-	
-	<h3> LSUN-Car </h3>
-	<table align=center width=600px>
-		<tr>
-			<td align=center width=600px>
-				<center>
-					<td><img class="round" style="width:800px" src="./resources/lsuncar.png"/></td>
-				</center>
-			</td>
-		</tr>
-	</table>
-	
-	<h3> MetFace </h3>
-	<table align=center width=600px>
-		<tr>
-			<td align=center width=600px>
-				<center>
-					<td><img class="round" style="width:800px" src="./resources/metface.png"/></td>
-				</center>
-			</td>
-		</tr>
-	</table>
-	
-	<h3> Anime </h3>
-	<table align=center width=600px>
-		<tr>
-			<td align=center width=600px>
-				<center>
-					<td><img class="round" style="width:800px" src="./resources/anime.png"/></td>
-				</center>
-			</td>
-		</tr>
-	</table>
-	<br>
-	<hr>
 	
 	<table align=center width=450px>
 		<center><h1>Paper and Supplementary Material</h1></center>
 		<tr>
 			<td><a href="https://arxiv.org/abs/2208.14889"><img class="layered-paper-big" style="height:175px" src="./resources/paper_lanit.png"/></a></td>
-			<td><span style="font-size:14pt">J. Park, S. Kim, S. Kim, J. Yoo, Y. Uh, S. Kim<br>
-				<b>LANIT: Language-Driven Image-to-Image Translation for Unlabeled Data.</b><br>
-				(hosted on <a href="https://arxiv.org/abs/2208.14889">ArXiv</a>)<br>
+			<td><span style="font-size:14pt">S. Kim, Y. Min, Y. Jung Y. Uh, S. Kim<br>
+				<b>Controllable Style Transfer via Test-time Training of Implicit Neural Representation.</b><br>
+				(hosted on <a href="https://arxiv.org/abs/">ArXiv</a>)<br>
 				<!-- (<a href="./resources/camera-ready.pdf">camera ready</a>)<br> -->
 				<span style="font-size:4pt"><a href=""><br></a>
 				</span>
