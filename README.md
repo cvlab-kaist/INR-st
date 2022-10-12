@@ -3,7 +3,7 @@
 This is the implementation of the paper "Controllable Style Transfer via Test-time Training of Implicit Neural Representatione" by Sunwoo Kim, Youngjo Min, Younghun Jung and Seungryong Kim.
 
 
-For more information, check out the paper on [[arXiv](https://arxiv.org/)].
+For more information, check out the paper and project page on [[arXiv](https://arxiv.org/), [project page](https://ku-cvlab.github.io/INR-st/)].
 
 
 Overall code will be updated in this week...
