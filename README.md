@@ -25,9 +25,14 @@ conda activate INR-st
 ```
 # Results
 
-![alt text](/images/Visualization.png)
-![alt text](/images/Qual_Pascal.png)
+## Super Resolution
+![alt text](/images/structure.png)
 
+## Gradation
+![alt text](/images/structure.png)
+
+## Region-wise stylization
+![alt text](/images/structure.png)
 
 # Acknowledgement <a name="Acknowledgement"></a>
 
