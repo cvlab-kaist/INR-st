@@ -39,6 +39,15 @@ conda activate INR-st
 ## Region-wise stylization
 ![alt text](/images/mask.png)
 
-# Acknowledgement <a name="Acknowledgement"></a>
+### BibTeX
+If you find this research useful, please consider citing:
+````BibTeX
+@article{kim2022inrst,
+  title = {Controllable Style Transfer via Test-time Training of Implicit Neural Representation},
+  author = {Kim, sunwoo and Youngjo, Min and Younghun, Jung and Kim, Seungryong},
+  journal = {arXiv preprint arXiv:2210.07762},
+  year = {2022},
+}
+````
 
 
