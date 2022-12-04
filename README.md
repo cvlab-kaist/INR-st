@@ -6,8 +6,6 @@ This is the implementation of the paper "Controllable Style Transfer via Test-ti
 For more information, check out the paper and project page on [[arXiv](https://arxiv.org/abs/2210.07762), [project page](https://ku-cvlab.github.io/INR-st/)].
 
 
-Overall code will be updated in this week...
-
 ![alt text](/images/INR-st_teaser.png)
 
 # Overall Architecture
@@ -22,21 +20,37 @@ Our model "Controllable Style Transfer via Test-time Training of Implicit Neural
 git clone https://github.com/KU-CVLAB/INR-st.git 
 cd INR-st
 
-conda env create -f environment.yaml
-conda activate INR-st
+pip install -r requirements.txt
 ```
 
+# Optimization
+```bash
+bash ./run_train.sh
+```
 
-# Results
+# Inference
+## Default
+```bash
+bash ./run_size_interpolation.sh
+```
 
 ## Super Resolution
+```bash
+bash ./run_size_control.sh
+```
 ![alt text](/images/resolution_comp.png)
 ![alt text](/images/res.png)
 
 ## Gradation
+```bash
+bash ./run_gradation.sh
+```
 ![alt text](/images/gradation.png)
 
 ## Region-wise stylization
+```bash
+bash ./run_mask.sh
+```
 ![alt text](/images/mask.png)
 
 ### BibTeX
